@@ -52,10 +52,6 @@ if __name__ == "__main__":
     #d = browser('ff')
     d = driver = selenium.webdriver.remote.webdriver.WebDriver('http://localhost:4444/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)
     times = 5
-    d.get("https://gbeta10.banggood.com")
-    time.sleep(2)
-    chart = d.find_element_by_id("cart_nums_id")
-    chart.click()
     """ 首页点击购物车
     for i in range(0,times):
         d.get("https://gbeta10.banggood.com")
@@ -66,6 +62,7 @@ if __name__ == "__main__":
         d.delete_all_cookies()
    """
     for i in range(0, times):
+        d.get("https://gbeta10.banggood.com/shopping_cart.php")
         d.refresh()
         uid = d.get_cookie("rec_uid")['value']
         sid = d.get_cookie("rec_sid")['value']
@@ -76,6 +73,5 @@ if __name__ == "__main__":
         #saveTxt("text.txt", "rec_uid: " + uid[0:u - 1] + ',' + "rec_sid: " + sid[0:s - 1])
         time.sleep(1)
         d.delete_all_cookies()
-        d.refresh()
     # 关闭浏览器
     d.quit()
