@@ -50,7 +50,7 @@ def saveTxt(filename, text):
 if __name__ == "__main__":
     # 启动浏览器
     #d = browser('ff')
-    d = driver = selenium.webdriver.remote.webdriver.WebDriver('http://localhost:4445/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)
+    d = driver = selenium.webdriver.remote.webdriver.WebDriver('http://localhost:4444/wd/hub',desired_capabilities=DesiredCapabilities.FIREFOX)
     times = 5
     d.get("https://gbeta10.banggood.com")
     time.sleep(2)
